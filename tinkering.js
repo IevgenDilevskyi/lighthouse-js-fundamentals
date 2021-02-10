@@ -1,52 +1,34 @@
-/*var favoriteMovie = function displayFavorite(movieName) {
-  console.log("My favorite movie is " + movieName);
-};
-
-// Function declaration that has two parameters: a function for displaying
-// a message, along with a name of a movie
-function movies(messageFunction, name) {
-  messageFunction(name);
-}
-
-// Call the movies function, pass in the favoriteMovie function and name of movie
-movies(favoriteMovie, "Finding Nemo");
-*/
-/*function movies(messageFunction, name) {
-  messageFunction(name);
-}
-
-// Call the movies function, pass in the function and name of movie
-movies(function displayFavorite(movieName) {
-  console.log("My favorite movie is " + movieName);
-}, "Finding Nemo");
-*/
-/*
- * Programming Quiz: Inline Functions (5-6)
- */
- 
- /*
+/** Programming Quiz: Nested Numbers (6-10)
  * QUIZ REQUIREMENTS
- * - Your code should have an `emotions()` function
- * - Your code should call the `emotions()` function
- * - Your `emotions()` function call should have an inline function expression passed as the second parameter
- * - Your function expression should return the expected output
+ *   - The `numbers` variable is an array of arrays.
+ *   - Use a nested `for` loop to cycle through `numbers`.
+ *   - Convert each even number to the string "even"
+ *   - Convert each odd number to the string "odd"
  */
 
 
-// don't change this code
-// emotions() function definition
-function emotions(myString, myFunc) {
-  console.log("I am " + myString + ", " + myFunc(2));
-}
+var numbers = [
+    [243, 12, 23, 12, 45, 45, 78, 66, 223, 3],
+    [34, 2, 1, 553, 23, 4, 66, 23, 4, 55],
+    [67, 56, 45, 553, 44, 55, 5, 428, 452, 3],
+    [12, 31, 55, 445, 79, 44, 674, 224, 4, 21],
+    [4, 2, 3, 52, 13, 51, 44, 1, 67, 5],
+    [5, 65, 4, 5, 5, 6, 5, 43, 23, 4424],
+    [74, 532, 6, 7, 35, 17, 89, 43, 43, 66],
+    [53, 6, 89, 10, 23, 52, 111, 44, 109, 80],
+    [67, 6, 53, 537, 2, 168, 16, 2, 1, 8],
+    [76, 7, 9, 6, 3, 73, 77, 100, 56, 100]
+];
 
 // your code goes here
-// Call the emotions() function with two arguments
-// Argument 1 - "happy" string
-// Argument 2 - an inline function expression
-emotions ("happy", function(sound){
-  let ha = "";
-    for (let x = 0; x < sound; x++) {
-        ha += "ha";
+
+for (var row = 0; row < numbers.length; row++) {
+  for (var column = 0; column < numbers[row].length; column++) {
+    if (numbers[row][column] % 2 === 0){
+      numbers[row][column] = "even"
+    } else {
+      numbers[row][column] = "odd"
+    }
+  }
 }
-return ha + "!";
-});
+console.log(numbers)
